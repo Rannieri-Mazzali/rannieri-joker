@@ -54,8 +54,8 @@ function somar (value, value2) {
 const result= value + value2
 return result
 }
-const result= somar(20,50)
- console.log(result+'resultado')
+const myResult= somar(80, 50)
+ console.log(myResult + "resultado")
 
 
 
