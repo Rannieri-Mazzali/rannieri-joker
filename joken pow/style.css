@@ -1,0 +1,24 @@
+* {
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+body {
+  
+background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+     padding: 20px;
+     background-color: #ffff;
+     border-radius: 10px;
+     display: flex;
+     flex-direction: column;
+}
