@@ -1,36 +1,117 @@
+/* Reset básico para remover margens e garantir box-sizing */
 * {
-
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* corpo com centralização do conteúdo e fundo escuro abaixo do vídeo */
 body {
-  
-background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden; /* evita barras de rolagem causadas pelo vídeo */
 }
 
-.container {
-     padding: 20px;
-     background-color: #ffff;
-     border-radius: 10px;
-     display: flex;
-     flex-direction: column;
-}
-
+/* vídeo de fundo responsivo que cobre 100% da janela */
 .video-background {
-   
-position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover; /* garante o preenchimento mantendo a proporção */
+  z-index: -1;
+}
+
+/* container principal com fundo semi-transparente para legibilidade */
+.container {
+  padding: 20px;
+  background-color: rgba(255,255,255,0.8); /* suaviza o contraste com o vídeo */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;     /* não cresce além dessa largura em monitores grandes */
+  width: 90%;           /* ocupa quase toda a largura em dispositivos pequenos */
+  margin: auto;         /* mantém centralizado mesmo se flex não estiver ativo */
+}
+
+/* ajustes para telas menores: reduz padding, aumenta legibilidade */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+    width: 95%;        /* mais margem nas laterais */
+    max-width: 400px;  /* limita para não ficar super estreito */
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ainda maiores densidades (pixels altos como Pixel phones) */
+@media (max-width: 360px) {
+  .container {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* área das escolhas dos jogadores */
+.choices {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* estilo dos botões de escolha */
+.choice {
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  flex: 1;
+  margin: 0 5px;
+  max-width: 120px;
+}
+
+.choice img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* efeito de hover para deixá-los mais interativos */
+.choice:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* área de placar */
+.scores {
+  text-align: center;
+}
+
+/* texto de resultado de rodada */
+#result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ajusta tamanho das imagens em telas muito pequenas */
+@media (max-width: 400px) {
+  .choice img {
+    width: 60px;
+    height: 60px;
+  }
 }

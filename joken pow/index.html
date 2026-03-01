@@ -4,39 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css ">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedra/Papel/Tesoura</title>
 </head>
 
 <body>
+    <!-- vídeo de fundo com classe usada pelo CSS para preencher a tela -->
+    <video autoplay muted loop class="video-background" id="myVideo">
+        <source src="./animate.mp4" type="video/mp4">
+       
+    </video>
 
-    
-    <div class="">
-        <video autoplay muted loop id="myVideo">
-            <!-- Aqui você coloca o caminho para o seu arquivo de vídeo local -->
-            <source src="./animate.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos HTML5.
-        </video>
-
+    <!-- container central que mantém todo o conteúdo do jogo -->
     <div class="container">
         <h1>Joken pô</h1>
         <div class="choices">
-            <button id="rock" class="choice">&#9994;</button>
-            <button id="paper" class="choice">&#128400;</button>
-            <button id="scissors" class="choice">&#9996;</button>
-
-
-            <p> Sua pontuação: <span>0</span></p>
-            <p> Pontuação da Maquina: <span>0</span></p>
-
+            <!-- os botões serão preenchidos dinamicamente pelo JS com imagens reais -->
+            <button id="rock" class="choice" type="button" title="Pedra"></button>
+            <button id="paper" class="choice" type="button" title="Papel"></button>
+            <button id="scissors" class="choice" type="button" title="Tesoura"></button>
         </div>
 
-        
+        <div class="scores">
+            <p> Sua pontuação: <span id="player-score">0</span></p>
+            <p> Pontuação da Máquina: <span id="computer-score">0</span></p>
+        </div>
 
+        <p id="result"></p> <!-- mensagem de resultado de cada rodada -->
+    </div>
 
+    <!-- script que contém a lógica do jogo e carregamento das imagens
+         ele utiliza um "endpoint" local (assets/hand-images.json) com URLs
+         que apontam para imagens de mãos reais. Caso queira trocar as imagens,
+         basta alterar esse JSON ou colocar arquivos em images/ para fallback. -->
+    <script src="script.js"></script>
 </body>
 
 </html>
- 
  
