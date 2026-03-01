@@ -1,5 +1,5 @@
 {
-  "rock": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Hand-rock.svg/120px-Hand-rock.svg.png",
-  "paper": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Hand-paper.svg/120px-Hand-paper.svg.png",
-  "scissors": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Hand-scissors.svg/120px-Hand-scissors.svg.png"
+  "pedra": "./images/pedra.png",
+  "papel": "./images/papel.png",
+  "tesoura": "./images/tesoura.png"
 }
